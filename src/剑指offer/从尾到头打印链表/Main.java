@@ -3,10 +3,10 @@ package 剑指offer.从尾到头打印链表;
 import OneQuestionEveryDay.Package_07.链表分割.ListNode;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class Main {
 
-        ArrayList<Integer> list = new ArrayList<>();
         public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
             // 头插法构建逆序链表
             ListNode dummyHead = new ListNode(-1);
@@ -25,22 +25,24 @@ public class Main {
             return list;
         }
 
+
     /**
-     * 递归
+     * 使用栈的结构
      * @param listNode
      * @return
      */
-    public ArrayList<Integer> PrintListFromTailToHead(ListNode listNode){
-        recur(listNode);
-        return list;
-    }
+    private ArrayList<Integer> PrintListFromTailToHead(ListNode listNode){
+            Stack<Integer> stack = new Stack<>();
+            while (listNode != null){
+                stack.add(listNode.val);
+                listNode = listNode.next;
+            }
 
-    private void recur(ListNode listNode){
-        if(listNode == null){
-            return;
+            ArrayList<Integer> list = new ArrayList<>();
+            while (!stack.isEmpty()){
+                list.add(stack.pop());
+            }
+            return list;
         }
-        recur(listNode.next);
-        list.add(listNode.val);
-    }
 
 }
