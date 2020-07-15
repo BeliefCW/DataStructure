@@ -1,4 +1,4 @@
-package 剑指offer.从尾到头打印链表;
+package 剑指offer.链表.从尾到头打印链表;
 
 import OneQuestionEveryDay.Package_07.链表分割.ListNode;
 
