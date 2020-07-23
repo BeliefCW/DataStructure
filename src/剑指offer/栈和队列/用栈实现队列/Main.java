@@ -5,7 +5,7 @@ import java.util.Stack;
 
 /*
 用栈实现队列
-两个队列   
+两个队列
  */
 public class Main {
         private Stack<Integer> in = new Stack<>();
